@@ -294,7 +294,7 @@ function! s:source_file_async.gather_candidates(args, context) "{{{
             \ . (a:context.source__is_directory ? 'd' : 'f') . ' -print'
     endif
   else
-    let command .= ' ' . string(directory)
+    let command .= ' ' . string(directory) . ' ' . join(a:args[1:], ' ')
   endif
 
   " Note: "pt" needs pty.
